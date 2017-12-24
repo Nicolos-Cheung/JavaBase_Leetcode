@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.UUID;
 
 import com.zn.bean.LinkNode;
 import com.zn.bean.TreeNode;
@@ -61,6 +62,12 @@ public class DataFactory {
 		return root;
 	}
 
+	/**
+	 * 等长度不同内容
+	 * 
+	 * @param num
+	 * @return
+	 */
 	public static List<String> getStringList(int num) {
 
 		List<String> l = new ArrayList();
@@ -71,6 +78,38 @@ public class DataFactory {
 		}
 
 		return l;
+	}
+
+	/**
+	 * 非等长List
+	 * 
+	 * @param num
+	 * @return
+	 */
+	public static List<String> getStringList2(int num) {
+		List<String> l = new ArrayList();
+		StringBuilder sb = new StringBuilder();
+		sb.append("z_");
+
+		for (int i = 0; i < num; i++) {
+
+			sb.append(i);
+			l.add(sb.toString());
+
+		}
+		return l;
+
+	}
+	
+	
+	public static List<String> getRandomUUIDList(int num){
+		
+		List<String> l = new ArrayList();
+		for(int i=0;i<num;i++){
+			l.add(UUID.randomUUID().toString());
+		}
+		return l;
+		
 	}
 
 }
