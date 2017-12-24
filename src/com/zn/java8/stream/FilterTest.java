@@ -21,6 +21,8 @@ public class FilterTest {
 		
 		long count = list.stream().count();
 		
+		list.parallelStream().map((s)->s.toUpperCase());
+		
 	}
 
 }
