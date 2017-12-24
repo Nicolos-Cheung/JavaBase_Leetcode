@@ -1,6 +1,8 @@
 package com.zn.factory;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import com.zn.bean.LinkNode;
@@ -9,8 +11,6 @@ import com.zn.bean.TreeNode;
 public class DataFactory {
 
 	/**
-	 * 返回链表头结点
-	 * 
 	 * @param arr
 	 * @return
 	 */
@@ -59,6 +59,18 @@ public class DataFactory {
 		}
 
 		return root;
+	}
+
+	public static List<String> getStringList(int num) {
+
+		List<String> l = new ArrayList();
+
+		for (int i = 0; i < num; i++) {
+
+			l.add("list_data_" + i);
+		}
+
+		return l;
 	}
 
 }
