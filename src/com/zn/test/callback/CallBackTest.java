@@ -9,7 +9,7 @@ public class CallBackTest {
 		
 		Questioner q = new Questioner(a);
 		
-		q.askQuestion("请问...");;
+		q.askQuestion("ask...");;
 		
 	}
 

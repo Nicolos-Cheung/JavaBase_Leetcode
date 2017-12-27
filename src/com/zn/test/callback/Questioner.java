@@ -50,5 +50,10 @@ public final class Questioner implements CallBack {
 
 		System.out.println("回答者告诉提问者的答案是--->" + result);
 	}
+	
 
+}
+
+class A{
+	
 }
