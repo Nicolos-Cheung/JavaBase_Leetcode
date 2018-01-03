@@ -24,5 +24,6 @@ public class FilterTest {
 		list.parallelStream().map((s)->s.toUpperCase());
 		
 	}
+	
 
 }

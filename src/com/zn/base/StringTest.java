@@ -8,29 +8,21 @@ public class StringTest {
 
 	public static void main(String[] args) throws Exception {
 
-		String str = "qwerwop";
 
-		System.out.println(str.lastIndexOf("w")); // 4 返回w最后一次出现的地方
-		System.out.println(str.indexOf("w")); // 1 返回w第一次出现的地方
-
-		System.out.println(str.charAt(1)); // w
-
-		// getChars
-		char[] chars = new char[2];
-		str.getChars(0, 2, chars, 0);
-		for (char c : chars) {
-			System.out.println(c); // q w [0,2)
-		}
-
-		// toCharArray()
-		// equalsIgnoreCase() 比较两个字符串
-
-		changeString();
-
-		String str1 = "abcdefgh";
-		String resverse = resverse(str1);
-		System.out.println(resverse);
 		
+		test2();
+		
+		
+		
+		
+	}
+
+	private static void test2() {
+		// TODO Auto-generated method stub
+		String str = "{status:1}";
+		
+		int a = str.lastIndexOf("status");
+		System.out.println(a);
 		
 	}
 
