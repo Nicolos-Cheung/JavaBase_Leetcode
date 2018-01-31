@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class TopKFrequentWords {
 
 	public static class Map {
-		public void map(String _, Document value, OutputCollector<String, Integer> output) {
+		public void map(String key, Document value, OutputCollector<String, Integer> output) {
 			// Write your code here
 			// Output the results into output buffer.
 			// Ps. output.collect(String key, int value);
