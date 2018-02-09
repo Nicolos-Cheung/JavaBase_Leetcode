@@ -1,4 +1,4 @@
-package com.zn.base.annotation.hibernateShow;
+ package com.zn.base.annotation.hibernateShow;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -34,10 +34,11 @@ public class AnnoTest {
 		}
 		Table t = c.getAnnotation(Table.class);
 		System.out.println(t.value()); // 表名
-		sb.append("SELECT * FROM ").append(t.value()).append(" where 1=1 ");
+		sb.append("SELECT * FROM ").append(t.value()).append(" WHERE 1=1 ");
 
 		Field[] fields = c.getDeclaredFields();
 		for (Field f : fields) {
+			
 			// 处理每个字段对应的sql
 			boolean fexist = f.isAnnotationPresent(Column.class);
 			if (!fexist) {
@@ -47,14 +48,12 @@ public class AnnoTest {
 			String columeName = column.value();
 			String fieldName = f.getName();
 			String methodName = "get" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);
-			System.out.println(methodName);
 
 			Object fieldValue = null;
 
 			try {
 				Method method = c.getMethod(methodName);
 				fieldValue = method.invoke(object);
-				System.out.println(fieldValue);
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -62,18 +61,17 @@ public class AnnoTest {
 			}
 
 			// 拼装sql - fieldValue
-
 			if (fieldValue == null || (fieldValue instanceof Integer && (Integer) fieldValue == 0)) {
 				continue;
 			}
 
-			sb.append(" and ").append(fieldName);
+			sb.append(" AND ").append(fieldName);
 
 			if (fieldValue instanceof String) {
 				if (((String) fieldValue).contains(",")) {
 					
 					String[] split = ((String) fieldValue).split(",");
-					sb.append(" in (");
+					sb.append(" IN (");
 					for(String s:split){
 						sb.append("'").append(s).append("'").append(",");
 					}
